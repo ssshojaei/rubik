@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import "./App.css";
 
 const App = () => {
-  const [count, setCount] = useState(5);
+  const [count, setCount] = useState(3);
   const styles = {
     gridTemplateColumns: `repeat(${count}, 1fr)`,
     gridTemplateRows: `repeat(${count}, 1fr)`,
   };
+  const array = [...new Array(count * count)];
 
   return (
     <>
@@ -15,33 +16,33 @@ const App = () => {
           <div className="rotate-z">
             <div className="cube">
               <div style={styles} className="panel panel-top">
-                {[...new Array(count * count)].map(() => (
-                  <div></div>
+                {array.map(() => (
+                  <div />
                 ))}
               </div>
               <div style={styles} className="panel panel-bottom">
-                {[...new Array(count * count)].map(() => (
-                  <div></div>
+                {array.map(() => (
+                  <div />
                 ))}
               </div>
               <div style={styles} className="panel panel-left">
-                {[...new Array(count * count)].map(() => (
-                  <div></div>
+                {array.map(() => (
+                  <div />
                 ))}
               </div>
               <div style={styles} className="panel panel-right">
-                {[...new Array(count * count)].map(() => (
-                  <div></div>
+                {array.map(() => (
+                  <div />
                 ))}
               </div>
               <div style={styles} className="panel panel-back">
-                {[...new Array(count * count)].map(() => (
-                  <div></div>
+                {array.map(() => (
+                  <div />
                 ))}
               </div>
               <div style={styles} className="panel panel-front">
-                {[...new Array(count * count)].map(() => (
-                  <div></div>
+                {array.map(() => (
+                  <div />
                 ))}
               </div>
             </div>
