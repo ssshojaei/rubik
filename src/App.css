@@ -1,38 +1,134 @@
-.App {
-  text-align: center;
+html, body {
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background: salmon;
+  margin: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+* {
+  box-sizing: border-box;
 }
 
-@keyframes App-logo-spin {
+.cube {
+  width: 10em;
+  height: 10em;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(-25deg) rotateY(-25deg) rotateX(-25deg);
+  transition: 0.3 ease all;
+}
+
+.panel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.6em;
+  padding: 0.3em;
+  outline: 2px solid black;
+  background: black;
+}
+
+.panel div {
+  border-radius: 0.3em;
+}
+
+.panel-top {
+  transform: rotateX(90deg) translateZ(5em);
+}
+
+.panel-top div {
+  background: white;
+}
+
+.panel-bottom {
+  transform: rotateX(90deg) translateZ(-5em);
+}
+
+.panel-bottom div {
+  background: blue;
+}
+
+.panel-left {
+  transform: rotateY(90deg) translateZ(-5em);
+}
+
+.panel-left div {
+  background: orange;
+}
+
+.panel-right {
+  transform: rotateY(90deg) translateZ(5em);
+}
+
+.panel-right div {
+  background: red;
+}
+
+.panel-back {
+  transform: rotateZ(90deg) translateZ(-5em);
+}
+
+.panel-back div {
+  background: yellow;
+}
+
+.panel-front {
+  transform: rotateZ(90deg) translateZ(5em);
+}
+
+.panel-front div {
+  background: green;
+}
+
+.rotate-x {
+  transform-style: preserve-3d;
+  animation: rotateX 20s linear infinite;;
+}
+
+.rotate-y {
+  transform-style: preserve-3d;
+  animation: rotateY 20s linear infinite;;
+}
+
+.rotate-z {
+  transform-style: preserve-3d;
+  animation: rotateZ 20s linear infinite;;
+}
+
+@keyframes rotateX {
   from {
-    transform: rotate(0deg);
+    transform: rotateX(0deg);
   }
+
   to {
-    transform: rotate(360deg);
+    transform: rotateX(360deg);
+  }
+}
+
+@keyframes rotateY {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes rotateZ {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
   }
 }
